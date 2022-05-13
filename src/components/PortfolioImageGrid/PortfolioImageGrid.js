@@ -106,7 +106,6 @@ const PortfolioImageGrid = ({ active }) => {
           Apps UI/UX
         </h5>
         <div className="apps-container img-container">
-          {/* {genContent()} */}
           {data.map((img, index) => {
             if (img.category === "app") {
               return (
