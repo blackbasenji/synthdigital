@@ -1,0 +1,44 @@
+.navbar-brand > button:nth-child(2) {
+  position: absolute;
+  right: 1px;
+  top: 10px;
+  z-index: 9999;
+  background: transparent;
+  transition: 0.5s;
+  transition-delay: 0s;
+
+  @media screen and (max-width: 767px) {
+    top: 5px;
+  }
+}
+
+header {
+  &.end-transparency .opening span::before,
+  &.end-transparency .opening span::after,
+  &.end-transparency .opening span {
+    background: #ff656c;
+  }
+
+  .open span,
+  .open span:before,
+  .open span:after {
+    background-color: #fff !important;
+  }
+
+  @media screen and (max-width: 767px) {
+    .opening span,
+    .opening span:before,
+    .opening span:after {
+      background-color: #000;
+    }
+  }
+
+  .bm-item-list {
+    padding-top: 80px;
+  }
+}
+
+.logo.first-logo.open {
+  z-index: 999999;
+  opacity: 1;
+}

@@ -1,0 +1,62 @@
+.bm-cross-button span {
+  display: none !important;
+}
+
+.bm-cross-button button {
+  left: -70px !important;
+  top: 0px;
+  width: 70px !important;
+  height: 70px !important;
+}
+
+.bm-burger-button .bm-burger-bars {
+  opacity: 0 !important;
+}
+
+.bm-overlay {
+  width: 300px !important;
+  right: 0;
+  background: red !important;
+}
+
+.navbar-brand > div,
+.bm-overlay {
+  pointer-events: none;
+}
+
+.navbar-brand .bm-menu-wrap {
+  pointer-events: all;
+}
+
+.bm-item-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bm-item {
+  outline: none;
+  display: flex !important;
+  flex-direction: column;
+  padding-top: 150px;
+  a {
+    margin-right: 10vw;
+
+    @media screen and (max-width: 767px) {
+      text-align: center !important;
+      margin-right: 0 !important;
+      widht: 100%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-top: 0px;
+  }
+}
+
+.right-items {
+  margin-right: 5vw;
+
+  @media screen and (max-width: 767px) {
+    margin-right: 0;
+  }
+}

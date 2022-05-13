@@ -1,184 +1,554 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Waypoint } from "react-waypoint";
+import Collapsible from "react-collapsible";
+import Slider from "react-slick";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import SEO from "../components/seo/Seo";
+import Layout from "../components/layout/Layout";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
 const IndexPage = () => {
-  return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+  const [isMobile, setIsMobile] = useState(false);
 
-export default IndexPage
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 767);
+  });
+
+  let settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  if (isMobile) {
+    settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+  }
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div className="home-page">
+        <Container className="hero-section transparent-hero container flexed">
+          <Row>
+            <Col className="content-container column centered-text">
+              <h1 className="teal-text">Howdy.</h1>
+              <p className="white-text subtext">
+                Synth is a UI/UX strategy and design agency in Dallas, Tx.{" "}
+                <br />
+                We create kickass digital products across all platforms.
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <p className="tagline">
+                Strategy<span className="pink-text">.</span> Synthesis
+                <span className="teal-text">.</span> Design
+                <span className="green-text">.</span>
+              </p>
+            </Col>
+          </Row>
+        </Container>
+        <Container className="our-focus" id="what-we-do">
+          <Row>
+            <Col className="centered-text">
+              <h5 className="margin-top-100">WHAT WE DO</h5>
+            </Col>
+          </Row>
+          <Row className="margin-top-125 flexed">
+            <Col className="left">
+              <h2>
+                Digital experiences
+                <br /> designed for humans
+              </h2>
+              <p>
+                From startup websites to expansive, complex consumer and
+                enterprise apps, our digital product design bedrock is
+                behavioral science. Through comprehensive strategic assessment,
+                generative research and human-centric design, we create products
+                people enjoy using.
+              </p>
+            </Col>
+
+            <Col className="right">
+              <figure className="phone-img">
+                <img
+                  src={
+                    require("../images/screen-shot-2020-10-08-at-4-16-35-pm.png")
+                      .default
+                  }
+                  srcSet={`${
+                    require("../images/screen-shot-2020-10-08-at-4-16-35-pm.png")
+                      .default
+                  } 300w, ${
+                    require("../images/screen-shot-2020-10-08-at-4-16-35-pm@2x.png")
+                      .default
+                  } 768w, ${
+                    require("../images/screen-shot-2020-10-08-at-4-16-35-pm@3x.png")
+                      .default
+                  } 1280w`}
+                  alt="mobile-app"
+                />
+                <figcaption>EquinEdge (multiplatform UI/UX)</figcaption>
+              </figure>
+            </Col>
+            <Waypoint
+              onEnter={() => {
+                document.querySelector(".phone-img").classList.add("animate");
+              }}
+            />
+          </Row>
+
+          <Row className="margin-top-50">
+            <Col className="right-align left">
+              <figure className="dog-logo">
+                <img
+                  src={
+                    require("../images/screen-shot-2020-10-09-at-12-32-02-pm.png")
+                      .default
+                  }
+                  srcSet={`${
+                    require("../images/screen-shot-2020-10-09-at-12-32-02-pm.png")
+                      .default
+                  } 300w, ${
+                    require("../images/screen-shot-2020-10-09-at-12-32-02-pm.png")
+                      .default
+                  } 768w, ${
+                    require("../images/screen-shot-2020-10-09-at-12-32-02-pm@3x.png")
+                      .default
+                  } 1280w`}
+                  alt="dog logo"
+                />
+                <figcaption className="left-align">
+                  GoBone (brand/identity)
+                </figcaption>
+              </figure>
+            </Col>
+
+            <Col className="margin-top-140 right">
+              <h2>
+                Branding that engages
+                <br /> and empowers
+              </h2>
+              <p>
+                We evolve existing brands, empower established brands, and
+                create new brands. We accomplish this through compelling visual
+                design and storytelling that expresses the unique spirit of your
+                brand, enriching the lives of both businesses and consumers.
+              </p>
+            </Col>
+          </Row>
+          <Waypoint
+            onEnter={() => {
+              document.querySelector(".dog-logo").classList.add("animate");
+            }}
+          />
+          <Row className="margin-top-110">
+            <Col className="left">
+              <figure className="website-design margin-bottom-mobile-0 hide-on-mobile">
+                <img
+                  src={
+                    require("../images/screen-shot-2020-10-22-at-3-45-29-pm.png")
+                      .default
+                  }
+                  srcSet={`${
+                    require("../images/screen-shot-2020-10-22-at-3-45-29-pm.png")
+                      .default
+                  } 300w, ${
+                    require("../images/screen-shot-2020-10-22-at-3-45-29-pm@2x.png")
+                      .default
+                  } 768w, ${
+                    require("../images/screen-shot-2020-10-22-at-3-45-29-pm@3x.png")
+                      .default
+                  } 1280w`}
+                  alt="website design"
+                />
+                <figcaption>Varo Money (branding, web design)</figcaption>
+              </figure>
+            </Col>
+            <Col className="margin-top-160 right">
+              <figure className="custom-icon hide-on-mobile">
+                <img
+                  src={require("../images/group-2.png").default}
+                  srcSet={`${require("../images/group-2.png").default} 300w, ${
+                    require("../images/group-2@2x.png").default
+                  } 768w, ${require("../images/group-2@3x.png").default} 1280w`}
+                  alt="custom icon"
+                />
+                <figcaption>Tu Vida (consumer mobile)</figcaption>
+              </figure>
+            </Col>
+          </Row>
+          <Waypoint
+            onEnter={() => {
+              document
+                .querySelector(".website-design")
+                .classList.add("animate");
+            }}
+          />
+          <Waypoint
+            onEnter={() => {
+              document.querySelector(".custom-icon").classList.add("animate");
+            }}
+          />
+          <Row className="margin-top-160 margin-top-mobile-0 margin-bottom-200 flexed">
+            <Col className="left">
+              <h2>
+                Enterprise experience
+                <br /> at consumer-grade
+              </h2>
+              <p>
+                We transform legacy enterprise apps into consumer-grade
+                experiences, increasing efficiency, productivity and morale.{" "}
+              </p>
+              <p>
+                The implementation of elegant and effective human-centric design
+                is at the forefront of our design ethos, for both consumer and
+                enterprise applications.
+              </p>
+            </Col>
+
+            <Col className="right">
+              <figure className="dashboard margin-top-75">
+                <img
+                  src={
+                    require("../images/screen-shot-2020-10-22-at-3-50-01-pm.png")
+                      .default
+                  }
+                  srcSet={`${
+                    require("../images/screen-shot-2020-10-22-at-3-50-01-pm.png")
+                      .default
+                  } 300w, ${
+                    require("../images/screen-shot-2020-10-22-at-3-50-01-pm@2x.png")
+                      .default
+                  } 768w, ${
+                    require("../images/screen-shot-2020-10-22-at-3-50-01-pm@3x.png")
+                      .default
+                  } 1280w`}
+                  alt="Dashboard"
+                />
+                <figcaption>
+                  Callahan Roach (branding, web, mobile app)
+                </figcaption>
+              </figure>
+            </Col>
+          </Row>
+          <Waypoint
+            onEnter={() => {
+              document.querySelector(".dashboard").classList.add("animate");
+            }}
+          />
+        </Container>
+        <Container className="core-services" id="services">
+          <Row className="margin-top-60">
+            <Col className="centered-text">
+              <h5 className="uppercase">Core Services</h5>
+            </Col>
+          </Row>
+          <Row className="margin-top-75 margin-bottom-125 flex-col-mobile">
+            <Col className="service">
+              <h3>Strategy</h3>
+              <ul>
+                <li>UI/UX Auditing</li>
+                <li>Research</li>
+                <li>Brand & Product Strategy</li>
+                <li>UX Consulting</li>
+                <li>Testing</li>
+              </ul>
+            </Col>
+            <Col className="service">
+              <h3>Design</h3>
+              <ul>
+                <li>Mobile Apps</li>
+                <li>Websites</li>
+                <li>Branding</li>
+                <li>UI/UX Design</li>
+                <li>Prototyping & Testing</li>
+              </ul>
+            </Col>
+            <Col className="service">
+              <h3>Development</h3>
+              <ul>
+                <li>Rapid prototyping</li>
+                <li>HTML/CSS/JS</li>
+                <li>React/Angular</li>
+                <li>iOS/Android native apps</li>
+                <li>Backend Integrations</li>
+              </ul>
+            </Col>
+            <Col className="service">
+              <h3>Content</h3>
+              <ul>
+                <li>Copywriting</li>
+                <li>Iconography</li>
+                <li>Video</li>
+                <li>Animation</li>
+                <li>Infographics</li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
+        <Container className="our-process" id="process">
+          <Row className="margin-top-60 margin-bottom-100">
+            <Col>
+              <h5 className="uppercase margin-bottom-50">our process</h5>
+
+              <p>
+                While every project is unique, and our models adaptive and
+                collaborative, every digital product design partnership goes
+                through these three core phases:
+              </p>
+
+              <div className="step-one">
+                <Collapsible
+                  className="hide-on-mobile"
+                  trigger="I. Research & Discovery"
+                >
+                  <p>
+                    At the outset of the project we consolidate all available
+                    documentation and we schedule UX workshops with key
+                    stakeholders and relevant teams to explore different ideas
+                    and plans. From here UX designers will engage with current
+                    or potential customers if possible to understand their
+                    desires, expectations, affinities, problems and pain points,
+                    as well as employ various techniques of market research,
+                    both qualitative and quantitative.
+                  </p>
+
+                  <p>
+                    At times, brands are reluctant towards conducting prior
+                    research as it demands time and resources, but the failure
+                    to do so will assuredly cost in the long run. Without
+                    appropriate research the true scope of customer needs cannot
+                    be assessed and determined. Research and discovery is the
+                    very foundation and impetus with which UI/UX design
+                    decisions are driven. Instead of relying on intuitions and
+                    gambles, it’s best to take a practical approach, and walk
+                    the extra mile to serve both the brand and customer better.
+                  </p>
+                </Collapsible>
+                <Collapsible className="show-mobile" trigger="Research">
+                  <p>
+                    At the outset of the project we consolidate all available
+                    documentation and we schedule UX workshops with key
+                    stakeholders and relevant teams to explore different ideas
+                    and plans. From here UX designers will engage with current
+                    or potential customers if possible to understand their
+                    desires, expectations, affinities, problems and pain points,
+                    as well as employ various techniques of market research,
+                    both qualitative and quantitative.
+                  </p>
+
+                  <p>
+                    At times, brands are reluctant towards conducting prior
+                    research as it demands time and resources, but the failure
+                    to do so will assuredly cost in the long run. Without
+                    appropriate research the true scope of customer needs cannot
+                    be assessed and determined. Research and discovery is the
+                    very foundation and impetus with which UI/UX design
+                    decisions are driven. Instead of relying on intuitions and
+                    gambles, it’s best to take a practical approach, and walk
+                    the extra mile to serve both the brand and customer better.
+                  </p>
+                </Collapsible>
+                <Collapsible
+                  className="hide-on-mobile"
+                  trigger="II. Digital Strategy & Concepting"
+                >
+                  <p>
+                    With the research and discovery results we synthesize a
+                    robust digital strategy, which in turn pilots the entire
+                    design process. The digital strategy begins by exploring
+                    different concepts and fine tuning key variables that will
+                    define a strong strategic vertical. From here, we begin
+                    concepting core elements such as information architecture
+                    and overall UI direction. We finish off this phase by
+                    presenting stakeholders with our concept for validation and
+                    approval.
+                  </p>
+                </Collapsible>
+                <Collapsible className="show-mobile" trigger="Digital Strategy">
+                  <p>
+                    With the research and discovery results we synthesize a
+                    robust digital strategy, which in turn pilots the entire
+                    design process. The digital strategy begins by exploring
+                    different concepts and fine tuning key variables that will
+                    define a strong strategic vertical. From here, we begin
+                    concepting core elements such as information architecture
+                    and overall UI direction. We finish off this phase by
+                    presenting stakeholders with our concept for validation and
+                    approval.
+                  </p>
+                </Collapsible>
+                <Collapsible
+                  trigger="III. UI/UX Design"
+                  className="hide-on-mobile"
+                >
+                  <p>
+                    We kickoff this phase by hitting the ground running with our
+                    freshly minted digital strategy and design concept. Various
+                    activities are performed including wireframing, user flow
+                    mapping, UI design, and prototyping. We utilize a
+                    streamlined process of tools such as Zeplin to hand off our
+                    assets to developers. A comprehensive brand style guide,
+                    which includes component libraries, guidelines and user
+                    maps, is also developed at this stage.
+                  </p>
+                </Collapsible>
+                <Collapsible trigger="UI/UX Design" className="show-mobile">
+                  <p>
+                    We kickoff this phase by hitting the ground running with our
+                    freshly minted digital strategy and design concept. Various
+                    activities are performed including wireframing, user flow
+                    mapping, UI design, and prototyping. We utilize a
+                    streamlined process of tools such as Zeplin to hand off our
+                    assets to developers. A comprehensive brand style guide,
+                    which includes component libraries, guidelines and user
+                    maps, is also developed at this stage.
+                  </p>
+                </Collapsible>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <Container className="testimonies" id="clients">
+          <Row className="centered-text margin-top-50">
+            <Col>
+              <h5 className="margin-bottom-50">CLIENTS</h5>
+            </Col>
+          </Row>
+          <div className="margin-bottom-100">
+            <Slider {...settings}>
+              <div>
+                <div className="testimoni">
+                  <p>
+                    “Working with Synth was very easy. They immediately
+                    understood our business requirements, translated them into
+                    specs, and got the work done quickly. I would definitely
+                    work with them again!”
+                  </p>
+                  <cite>
+                    <span className="no-break">
+                      Roger Van Duinen, Co-Founder
+                    </span>
+                    <br /> Varo Money
+                  </cite>
+                </div>
+              </div>
+              <div>
+                <div className="testimoni">
+                  <p>
+                    “I’ve worked with multiple design agencies, but none like
+                    Synth. Their work exceeds expectations.”
+                  </p>
+                  <cite>
+                    Jeffrey Scott Smith, Founder
+                    <br /> Hospital Integration Inc.
+                  </cite>
+                </div>
+              </div>
+              <div>
+                <div className="testimoni">
+                  <p>
+                    “Logan at Synth is a designer with a motivation to solve
+                    complex challenges. He came to the table as a thought
+                    partner rather than just a doer that blindly follows orders.
+                    He brought not just excellent multi-platform UX design, but
+                    all-around great ideas.”
+                  </p>
+                  <cite>
+                    Scott McKeever, Founder & CEO
+                    <br /> EquinEdge
+                  </cite>
+                </div>
+              </div>
+            </Slider>
+          </div>
+        </Container>
+        <Container className="logos-section">
+          <Row className="align-vertical">
+            <div>
+              <img
+                src={require("../svgs/varo-bank-logo-1.svg").default}
+                alt="Varo Logo"
+                className="logo one height-34-mobile"
+              />
+            </div>
+            <div>
+              <img
+                src={require("../svgs/group-17.svg").default}
+                alt="Equinedge Logo"
+                className="logo two hide-on-mobile"
+              />
+              <img
+                src={require("../svgs/group-225.svg").default}
+                alt="UM Logo"
+                className="logo five show-mobile height-34-mobile"
+              />
+            </div>
+            <div>
+              <img
+                src={require("../svgs/group-5.svg").default}
+                alt="CR Logo"
+                className="logo three  hide-on-mobile height-63-mobile"
+              />
+              <img
+                src={require("../svgs/group.svg").default}
+                alt="Hospital Integration Logo"
+                className="logo four show-mobile"
+              />
+            </div>
+            <div>
+              <img
+                src={require("../svgs/group.svg").default}
+                alt="Hospital Integration Logo"
+                className="logo four hide-on-mobile"
+              />
+              <img
+                src={require("../svgs/group-5.svg").default}
+                alt="CR Logo"
+                className="logo three height-63-mobile show-mobile"
+              />
+            </div>
+            <div>
+              <img
+                src={require("../svgs/group-225.svg").default}
+                alt="UM Logo"
+                className="logo five hide-on-mobile"
+              />
+              <img
+                src={require("../svgs/lion-cut.svg").default}
+                alt="Equinedge Logo"
+                className="logo two show-mobile height-60"
+              />
+            </div>
+            <div>
+              <img
+                src={require("../svgs/group-7.svg").default}
+                alt="TU Logo"
+                className="logo six"
+              />
+            </div>
+          </Row>
+          <Waypoint
+            onEnter={() => {
+              document.querySelector(".logos-section").classList.add("animate");
+            }}
+          />
+        </Container>
+      </div>
+    </Layout>
+  );
+};
+
+export default IndexPage;

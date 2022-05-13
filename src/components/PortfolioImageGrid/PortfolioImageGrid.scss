@@ -1,0 +1,141 @@
+main div.portfolio-grid.container {
+  margin: 0 auto;
+  max-width: 1260px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 1000px;
+
+  lazyload {
+    display: inline-block;
+    justify-content: space-around;
+
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .logo,
+  .website {
+    width: 31%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    @media screen and (max-width: 767px) {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+
+  .app {
+    width: 23%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    &.half-app {
+      width: 48%;
+      margin-left: 1%;
+      margin-right: 1%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  }
+
+  .icons {
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    @media screen and (max-width: 767px) {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+
+  img {
+    margin-top: 75px;
+    object-fit: cover;
+    cursor: pointer;
+    -webkit-box-shadow: 5px 10px 26px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 5px 10px 26px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 5px 10px 26px 0px rgba(0, 0, 0, 0.15);
+    transition-duration: 0.5s;
+    transform: scale(1);
+    opacity: 1;
+    animation-delay: 1s;
+    animation: display-none-transition-reverse 0.5s both;
+    @media screen and (max-width: 767px) {
+      margin-top: 25px;
+    }
+  }
+
+  h5 {
+    margin-top: 75px;
+    width: 100%;
+    text-align: center;
+    transform: scale(1);
+    opacity: 1;
+    animation-delay: 1s;
+    animation: display-none-transition-reverse 1s both;
+  }
+
+  .img-container {
+    max-height: 100%;
+  }
+
+  .hidden {
+    animation: display-none-transition 1s both;
+    &.category-title {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: -50px;
+
+    div {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@keyframes display-none-transition {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  99% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    height: 0;
+  }
+}
+
+@keyframes display-none-transition-reverse {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  1% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
