@@ -11,10 +11,20 @@ const Footer = () => {
     <footer className="fixed" id="contact">
       <Row>
         <Col className="spaced-out">
-          <h3 className="margin-top-15 margin-bottom-100">
-            Like what you see?
-            <br /> Let's talk.
-          </h3>
+<h3 className="margin-top-15">Let’s Build Something Together</h3>
+<p className="margin-bottom-30">
+  I help startups and product teams create meaningful, scalable digital experiences.
+</p>
+<div className="cta-buttons margin-bottom-50">
+  <a
+    href="https://calendly.com/YOUR-CALENDLY-LINK"
+    className="btn btn-primary margin-right"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Book a Call
+  </a>
+</div>
           <div className="emails">
             <p className="hide-on-mobile">
               Strategy & Branding
