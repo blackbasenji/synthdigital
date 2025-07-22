@@ -41,43 +41,53 @@ const IndexPage = () => {
         <Container className="hero-section transparent-hero container flexed">
           <Row>
             <Col className="content-container column centered-text">
-              <h1 className="teal-text">Howdy.</h1>
-              <p className="white-text subtext">
-                Synth is a UI/UX strategy and design agency in Dallas, Tx.{" "}
-                <br />
-                We create kickass digital products across all platforms.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p className="tagline">
-                Strategy<span className="pink-text">.</span> Synthesis
-                <span className="teal-text">.</span> Design
-                <span className="green-text">.</span>
-              </p>
+              <h1 className="teal-text">Fractional CDO & Product Design Leadership</h1>
+<p className="white-text subtext">
+  Helping founders bring clarity, momentum, and polish to digital products.
+</p>
+<div className="cta-buttons margin-top-20">
+  <a href="https://calendly.com/YOUR-CALENDLY-LINK" className="btn btn-primary margin-right">Book a Call</a>
+  <a href="#how-i-work" className="btn btn-outline-light">See How I Work</a>
+</div>
             </Col>
           </Row>
         </Container>
+<Container className="about-logan margin-top-100" id="about">
+  <Row>
+    <Col md={{ span: 8, offset: 2 }} className="centered-text">
+      <h5 className="uppercase">About Logan</h5>
+      <p>
+        I’m Logan McCoy — a Fractional Chief Design Officer and Principal Product Designer with 15+ years of experience helping early-stage teams turn ideas into launch-ready digital products.
+      </p>
+      <p>
+        Through a blend of product strategy, UX leadership, and creative synthesis, I help teams move quickly without losing clarity.
+      </p>
+      <p>
+        I’ve led design systems, user flows, and full product builds across AI, healthcare, fintech, and consumer tech — from 0 to 7,000+ users and beyond.
+      </p>
+      <p>
+        When I’m not designing, I’m probably playing chess, crafting espresso, or tending to my (too many) houseplants.
+      </p>
+      <a href="mailto:logan@synthdigital.com" className="btn btn-outline-light margin-top-20">Let’s Talk →</a>
+    </Col>
+  </Row>
+</Container>
+
         <Container className="our-focus" id="what-we-do">
           <Row>
             <Col className="centered-text">
-              <h5 className="margin-top-100">WHAT WE DO</h5>
+              <h5 className="margin-top-100">What I Help Build</h5>
             </Col>
           </Row>
           <Row className="margin-top-125 flexed">
             <Col className="left">
               <h2>
                 Digital experiences
-                <br /> designed for humans
+                <br /> that deliver clarity & momentum
               </h2>
-              <p>
-                From startup websites to expansive, complex consumer and
-                enterprise apps, our digital product design bedrock is
-                behavioral science. Through comprehensive strategic assessment,
-                generative research and human-centric design, we create products
-                people enjoy using.
-              </p>
+    <p>
+      Every startup needs strong execution and clear direction. I step in as a strategic partner — not just to design, but to align product, UX, and brand into one cohesive vision. From early-stage concepts to mature platforms, these projects show how clarity and creative leadership can drive real momentum.
+    </p>
             </Col>
 
             <Col className="right">
@@ -249,6 +259,56 @@ const IndexPage = () => {
             }}
           />
         </Container>
+<Container className="fractional-cdo-services margin-top-100" id="how-i-work">
+  <Row>
+    <Col className="centered-text">
+      <h5 className="uppercase">Fractional CDO Services</h5>
+      <p>Flexible packages for founders and product teams at any stage.</p>
+    </Col>
+  </Row>
+  <Row className="margin-top-40">
+    <Col>
+      <table className="table service-tiers">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Rate</th>
+            <th>Time</th>
+            <th>What's Included</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Advisory</td>
+            <td>$2,500/mo</td>
+            <td>~6–8 hrs/mo</td>
+            <td>Strategy, UX review, monthly check-ins</td>
+          </tr>
+          <tr>
+            <td>Strategic Partner</td>
+            <td>$5,000/mo</td>
+            <td>~12–15 hrs/mo</td>
+            <td>Direction, branding, dev collaboration</td>
+          </tr>
+          <tr>
+            <td>Fractional CDO</td>
+            <td>$8–10k/mo</td>
+            <td>~20–30 hrs/mo</td>
+            <td>UX/UI execution, design systems, MVP oversight</td>
+          </tr>
+        </tbody>
+      </table>
+      <p className="margin-top-20">
+        Not sure where to start? Try a 1–2 week Design Strategy Sprint for $2,500.
+      </p>
+      <div className="cta-buttons margin-top-20">
+        <a href="mailto:logan@synthdigital.com" className="btn btn-outline-light margin-right">Let’s Talk</a>
+        <a href="/pricing" className="btn btn-outline-light">See Detailed Pricing</a>
+      </div>
+    </Col>
+  </Row>
+</Container>
+
         <Container className="core-services" id="services">
           <Row className="margin-top-60">
             <Col className="centered-text">
