@@ -21,7 +21,7 @@ const IndexPage = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToScroll: 1, 
   };
 
   if (isMobile) {
@@ -42,13 +42,13 @@ const IndexPage = () => {
           <Row>
             <Col className="content-container column centered-text">
               <h1 className="teal-text">Fractional CDO & Product Design Leadership</h1>
-<p className="white-text subtext">
-  Helping founders bring clarity, momentum, and polish to digital products.
-</p>
-<div className="cta-buttons margin-top-20">
-  <a href="https://calendly.com/YOUR-CALENDLY-LINK" className="btn btn-primary margin-right">Book a Call</a>
-  <a href="#how-i-work" className="btn btn-outline-light">See How I Work</a>
-</div>
+              <p className="white-text subtext hero-lead-text">
+                Helping founders bring clarity, momentum, and polish to digital products.
+              </p>
+              <div className="cta-buttons homepage-cta-buttons">
+                <a href="https://calendly.com/YOUR-CALENDLY-LINK" className="btn teal-btn homepage-cta-btn margin-right-15">Book a Call</a>
+                <a href="#how-i-work" className="btn teal-btn homepage-cta-btn">See How I Work</a>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -68,7 +68,7 @@ const IndexPage = () => {
       <p>
         When I’m not designing, I’m probably playing chess, crafting espresso, or tending to my (too many) houseplants.
       </p>
-      <a href="mailto:logan@synthdigital.com" className="btn btn-outline-light margin-top-20">Let’s Talk →</a>
+      <a href="mailto:logan@synthdigital.com" className="btn teal-btn homepage-cta-btn margin-top-20">Let’s Talk →</a>
     </Col>
   </Row>
 </Container>
@@ -262,48 +262,50 @@ const IndexPage = () => {
 <Container className="fractional-cdo-services margin-top-100" id="how-i-work">
   <Row>
     <Col className="centered-text">
-      <h5 className="uppercase">Fractional CDO Services</h5>
+      <h3 className="fractional-cdo-h3 margin-bottom-25">Fractional CDO Services</h3>
       <p>Flexible packages for founders and product teams at any stage.</p>
     </Col>
   </Row>
-  <Row className="margin-top-40">
+  <Row className="margin-top-0">
     <Col>
-      <table className="table service-tiers">
-        <thead>
-          <tr>
-            <th>Tier</th>
-            <th>Rate</th>
-            <th>Time</th>
-            <th>What's Included</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Advisory</td>
-            <td>$2,500/mo</td>
-            <td>~6–8 hrs/mo</td>
-            <td>Strategy, UX review, monthly check-ins</td>
-          </tr>
-          <tr>
-            <td>Strategic Partner</td>
-            <td>$5,000/mo</td>
-            <td>~12–15 hrs/mo</td>
-            <td>Direction, branding, dev collaboration</td>
-          </tr>
-          <tr>
-            <td>Fractional CDO</td>
-            <td>$8–10k/mo</td>
-            <td>~20–30 hrs/mo</td>
-            <td>UX/UI execution, design systems, MVP oversight</td>
-          </tr>
-        </tbody>
-      </table>
-      <p className="margin-top-20">
+      <div className="cdo-table-wrapper">
+        <table className="table service-tiers cdo-pricing-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Rate</th>
+              <th>Time</th>
+              <th>What's Included</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Advisory</strong></td>
+              <td>$2,500/mo</td>
+              <td>~6–8 hrs/mo</td>
+              <td>Strategy, UX review, monthly check-ins</td>
+            </tr>
+            <tr>
+              <td><strong>Strategic Partner</strong></td>
+              <td>$5,000/mo</td>
+              <td>~12–15 hrs/mo</td>
+              <td>Direction, branding, dev collaboration</td>
+            </tr>
+            <tr>
+              <td><strong>Fractional CDO</strong></td>
+              <td>$8–10k/mo</td>
+              <td>~20–30 hrs/mo</td>
+              <td>UX/UI execution, design systems, MVP oversight</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="margin-top-40 margin-bottom-30 about-logan-typography centered-text">
         Not sure where to start? Try a 1–2 week Design Strategy Sprint for $2,500.
       </p>
-      <div className="cta-buttons margin-top-20">
-        <a href="mailto:logan@synthdigital.com" className="btn btn-outline-light margin-right">Let’s Talk</a>
-        <a href="/pricing" className="btn btn-outline-light">See Detailed Pricing</a>
+      <div className="cta-buttons margin-top-50 centered-text">
+        <a href="mailto:logan@synthdigital.com" className="btn teal-btn margin-right-15">Let’s Talk</a>
+        <a href="/pricing" className="btn teal-btn">See Detailed Pricing</a>
       </div>
     </Col>
   </Row>

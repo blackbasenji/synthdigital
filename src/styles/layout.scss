@@ -1,3 +1,177 @@
+/* Hide the hamburger aria label visually, but keep for screen readers */
+.hamburger-react-label,
+.hamburger-react__label, /* in case of different lib versions */
+.hamburger-slider-label,
+.hamburger-slider__label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.homepage-cta-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.homepage-cta-btn {
+  font-size: 20px;
+  font-weight: 700;
+}
+.homepage-cta-btn.margin-right-15 {
+  margin-right: 20px;
+}
+
+/* Spacing between buttons for legacy class usage, fallback for .margin-right-15 */
+.homepage-cta-buttons .btn:not(:last-child),
+.cta-buttons .btn:not(:last-child) {
+  margin-right: 20px;
+}
+.btn {
+  font-size: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-decoration: none !important;
+}
+.btn.full-width {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+.btn:hover, .btn:focus, .btn:active {
+  text-decoration: none !important;
+}
+
+/* Fractional CDO Services section */
+
+.fractional-cdo-services .cdo-pricing-table th,
+.fractional-cdo-services .cdo-pricing-table td {
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+.fractional-cdo-services {
+  background: linear-gradient(to bottom, #51084f, #031e67);
+  color: #fff;
+  margin-top: 20px;
+}
+.fractional-cdo-services .row,
+.fractional-cdo-services .row.margin-top-40 {
+  padding: 30px 0;
+}
+.fractional-cdo-services .row + .row {
+  margin-top: 40px;
+}
+.fractional-cdo-services,
+.fractional-cdo-services h3,
+.fractional-cdo-services h2,
+.fractional-cdo-services h5,
+.fractional-cdo-services p,
+.fractional-cdo-services th,
+.fractional-cdo-services td {
+  color: #fff !important;
+}
+
+/* CDO services table background override */
+.fractional-cdo-services .cdo-pricing-table,
+.fractional-cdo-services .cdo-pricing-table th,
+.fractional-cdo-services .cdo-pricing-table td {
+  background-color: transparent !important;
+}
+
+/* Ensure strong tags in CDO services are white */
+.fractional-cdo-services strong,
+.fractional-cdo-services td strong,
+.fractional-cdo-services th strong {
+  color: #fff !important;
+}
+.about-logan h5.uppercase {
+  margin-bottom: 40px;
+}
+.about-logan p {
+  text-align: left;
+  font-family: brother-1816, sans-serif;
+  font-weight: 300;
+  color: #0c0c0c;
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+/* Let's Build Something Together paragraph line height fix */
+.footer .spaced-out p.about-logan-typography,
+footer .spaced-out p.about-logan-typography {
+  line-height: 1.5 !important;
+}
+
+/* Match About Logan typography for other sections as needed */
+.about-logan-typography,
+.about-logan-typography p {
+  font-family: brother-1816, sans-serif;
+  font-weight: 300;
+  color: #0c0c0c;
+  font-size: 21px;
+  line-height: 1.45;
+  text-align: left;
+}
+/* Let's Build Something Together section spacing */
+.spaced-out h3,
+.spaced-out h2 {
+  margin-bottom: 30px;
+}
+.spaced-out p {
+  margin-bottom: 30px;
+}
+
+/* Match hero text line height and font styling to About Logan paragraph */
+.hero-lead-text {
+  font-family: brother-1816, sans-serif;
+  font-weight: 300;
+  color: #0c0c0c;
+  font-size: 21px;
+  line-height: 1.45;
+}
+@media screen and (max-width: 767px) {
+  .hero-lead-text {
+    font-size: 18px;
+    line-height: 28px;
+    color: #fff;
+  }
+}
+
+/* Fractional CDO Services h3 and margin */
+.fractional-cdo-h3 {
+  font-size: 40px;
+  font-family: brother-1816, sans-serif;
+  font-weight: bold;
+  margin-bottom: 25px !important;
+  color: #0c0c0c;
+}
+
+/* CDO Pricing Table font and bold headings */
+.cdo-pricing-table,
+.cdo-pricing-table th,
+.cdo-pricing-table td {
+  font-family: brother-1816, sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  color: #fff !important;
+  line-height: 1.45;
+  background: transparent !important;
+}
+.cdo-pricing-table td strong {
+  font-weight: 700;
+}
+
+/* CDO table wrapper for inheritance and spacing if needed */
+.cdo-table-wrapper {
+  width: 100%;
+}
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
 
 html {
@@ -117,6 +291,7 @@ select,
 textarea {
   font: inherit;
   margin: 0;
+  font-size: 20px;
 }
 optgroup {
   font-weight: 700;
@@ -134,6 +309,7 @@ select {
 button,
 html [type="button"] {
   -webkit-appearance: button;
+  font-size: 20px;
 }
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -843,6 +1019,20 @@ header.fixed {
   text-decoration: none;
 }
 
+.btn.teal-btn {
+  background: #00ddc7;
+  color: #0c0c0c !important;
+  font-weight: 700;
+  font-size: 20px;
+  border-color: #00ddc7;
+
+  &:hover {
+    background: darken(#00ddc7, 8%);
+    border-color: darken(#00ddc7, 8%);
+    color: #0c0c0c !important;
+  }
+}
+
 .mainHeader .nav-bar {
   display: flex;
   flex-direction: row;
@@ -1097,6 +1287,7 @@ main .two-columns .col {
 .hero-section.container {
   align-items: center;
   padding-top: 100px;
+  padding-bottom: 174px;
   position: relative;
 }
 
@@ -1247,7 +1438,7 @@ main .max-width-fix {
 }
 
 .margin-top-0 {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .margin-top-15 {
@@ -1256,6 +1447,14 @@ main .max-width-fix {
 
 .margin-top-20 {
   margin-top: 20px;
+}
+
+.margin-top-40 {
+  margin-top: 40px !important;
+}
+/* Increase vertical spacing of table rows in CDO pricing table */
+.cdo-pricing-table tr {
+  height: 68px;
 }
 
 .margin-top-30 {
@@ -2438,12 +2637,8 @@ footer {
       padding-left: 0;
     }
 
-    button.btn {
-      background: #00ddc7;
+    button.teal-btn {
       width: 100%;
-      font-size: 20px;
-      color: #0c0c0c;
-      font-weight: 700;
       line-height: 50px;
       padding: 0;
     }
@@ -2495,4 +2690,13 @@ footer {
       padding-bottom: 25px;
     }
   }
+}
+
+/* Ensure all buttons have font-size 20px */
+button,
+.btn,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  font-size: 20px !important;
 }

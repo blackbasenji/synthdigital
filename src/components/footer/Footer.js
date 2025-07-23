@@ -12,13 +12,13 @@ const Footer = () => {
       <Row>
         <Col className="spaced-out">
 <h3 className="margin-top-15">Let’s Build Something Together</h3>
-<p className="margin-bottom-30">
+<p className="margin-bottom-30 about-logan-typography">
   I help startups and product teams create meaningful, scalable digital experiences.
 </p>
 <div className="cta-buttons margin-bottom-50">
   <a
     href="https://calendly.com/YOUR-CALENDLY-LINK"
-    className="btn btn-primary margin-right"
+    className="btn teal-btn margin-right-15"
     target="_blank"
     rel="noopener noreferrer"
   >
