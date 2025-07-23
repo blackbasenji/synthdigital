@@ -39,7 +39,6 @@ const Header = ({ siteTitle, opaque, headerVersion }) => {
   };
 
   const toggleButton = useCallback(() => {
-    document.getElementById("burger-btn").click();
     setIsActive((prevState) => !prevState);
   }, []);
 
