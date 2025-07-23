@@ -6,38 +6,23 @@ import "./HamburgerMenu.scss";
 export default class Burger extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      menuOpen: false,
-    };
   }
 
   showSettings(event) {
     event.preventDefault();
   }
 
-  closeMenu() {
-    this.setState({ menuOpen: false });
-  }
-
-  handleStateChange(state) {
-    this.setState({ menuOpen: state.isOpen });
-  }
-
   render() {
+    const { isActive } = this.props;
+
     return (
-      <Menu
-        right
-        className="navbar-burger"
-        isOpen={this.state.menuOpen}
-        onStateChange={state => this.handleStateChange(state)}
-      >
+      <Menu right className="navbar-burger" isOpen={isActive}>
         <div>
           <Link
             id="about"
             className="menu-item"
             to="/#what-we-do"
             onClick={() => {
-              this.closeMenu();
               this.props.toggleButton();
             }}
           >
@@ -47,7 +32,6 @@ export default class Burger extends React.Component {
             className="menu-item"
             to="/#services"
             onClick={() => {
-              this.closeMenu();
               this.props.toggleButton();
             }}
           >
@@ -57,7 +41,6 @@ export default class Burger extends React.Component {
             className="menu-item"
             to="/#process"
             onClick={() => {
-              this.closeMenu();
               this.props.toggleButton();
             }}
           >
@@ -72,7 +55,6 @@ export default class Burger extends React.Component {
             className="menu-item"
             to="/#contact"
             onClick={() => {
-              this.closeMenu();
               this.props.toggleButton();
             }}
           >
