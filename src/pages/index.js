@@ -57,7 +57,7 @@ const IndexPage = () => {
                 Fractional Chief Design Officer blending strategy, UX, and systems thinking to launch meaningful digital products.
               </p>
       <div className="hero-buttons">
-        <a href="https://calendly.com/YOUR-CALENDLY-LINK" className="btn coral-btn">Book a Call</a>
+        <a href="https://calendly.com/loganmccoy/new-meeting-1" className="btn coral-btn">Book a Call</a>
         <a href="#process" className="btn underline-link">See How I Work</a>
       </div>
             </Col>
