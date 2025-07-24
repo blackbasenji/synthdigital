@@ -195,7 +195,7 @@ const IndexPage = () => {
                   } 1280w`}
                   alt="mobile-app"
                 />
-                <figcaption>EquinEdge (cross-platform product design, UI/UX)</figcaption>
+                <figcaption>EquinEdge (cross-platform product design, UI/UX, branding)</figcaption>
               </figure>
             </Col>
             <Waypoint
@@ -343,7 +343,7 @@ const IndexPage = () => {
               <span className="no-wrap-text">Want to dive deeper into the UX and product design behind my work?</span><br />
               I keep an current and curated case study archive at <a href="https://loganmccoy.design" target="_blank">loganmccoy.design</a>.
             </p>
-            <a href="https://loganmccoy.design" className="btn coral-btn">See More Case Studies →</a>
+            <a href="https://loganmccoy.design" className="btn coral-btn">See My Case Studies →</a>
           </div>
         </Container>
 <Container className="fractional-cdo-services margin-top-100" id="how-i-work">

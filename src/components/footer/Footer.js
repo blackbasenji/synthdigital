@@ -250,7 +250,9 @@ const Footer = () => {
           <a href="/#what-we-do">About</a>
           <a href="/#services">Services</a>
           <a href="/#process">Process</a>
-          <a href="/portfolio">Work</a>
+          <a href="https://loganmccoy.design" target="_blank" rel="noopener noreferrer">
+  View Portfolio
+</a>
           {/* <a href="/blog">Blog</a> */}
           <a href="/privacy-policy">Privacy Policy</a>
         </div>

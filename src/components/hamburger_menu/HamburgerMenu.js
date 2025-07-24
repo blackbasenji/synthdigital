@@ -48,9 +48,9 @@ export default class Burger extends React.Component {
           </Link>
         </div>
         <div className="right-items">
-          <Link className="menu-item" to="/portfolio">
-            Work
-          </Link>
+          <a className="menu-item" href="https://loganmccoy.design" target="_blank" rel="noopener noreferrer">
+  View Portfolio
+</a>
           <Link
             className="menu-item"
             to="/#contact"
