@@ -1,0 +1,185 @@
+
+.tier-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 8px 0 6px;
+}
+
+.checkmark {
+  color: #7ED957;
+  margin-right: 8px;
+}
+.modal {
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 720px;
+  margin: auto;
+  background: #111;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.modal-content p {
+ font-size: 1em;
+}
+
+.modal-content h2 {
+    font-size: 1.6rem;
+  }
+
+
+.tier {
+  margin-top: 10px;
+}
+
+.tier h3 {
+  margin-bottom: 4px;
+  font-size: 1.6rem;
+}
+
+.modal-cta {
+  margin-top: 30px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-cta .btn {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #fff;
+  background: #222;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.modal-cta .btn.secondary {
+  background: #ccc;
+  color: #000;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+    padding: 24px 20px;
+    max-height: 85vh;
+  }
+
+
+  .tier h3 {
+    font-size: 1.1rem;
+  }
+
+  .modal-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .modal-cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .tier {
+    margin-top: 24px;
+  }
+}
+
+.fractional-cdo-services .modal-content,
+.fractional-cdo-services .modal-content h2,
+.fractional-cdo-services .modal-content h3,
+.fractional-cdo-services .modal-content p,
+.fractional-cdo-services .modal-content li {
+  color: #000 !important;
+}
+
+.fractional-cdo-services .modal-content strong {
+  color: #000 !important;
+}
+
+.modal-content ul {
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+  margin-top:1rem;
+}
+
+.modal-content li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.modal-content .tier-label {
+  color: #FF6B4A; /* Coral */
+  font-weight: bold;
+}
+
+.modal-content .tier-label {
+  color: #FF6B4A; /* Coral */
+  font-weight: bold;
+}
+
+.modal-content h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 0px;
+}
+
+/* Remove checkmark ::before to avoid duplicate icons, since checkmarks are rendered via JSX */
+
+.modal-content .final-line {
+  margin-top: 20px; /* or 16px if it still feels too far */
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
+
+.modal-content .modal-close {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  font-size: 47px !important;
+  font-weight: normal;
+  color: rgb(170, 170, 170);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-content .modal-close::before,
+.modal-content .modal-close::after {
+  content: none !important;
+  background: none !important;
+}
+
+
+
+.modal-close:hover {
+  background-color: transparent !important;
+}

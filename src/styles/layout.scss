@@ -1,3 +1,128 @@
+/* Pricing section CTA buttons container */
+.pricing-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .pricing-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-buttons .btn + .btn {
+    margin-top: 16px;
+  }
+}
+
+/* Hero section CTA buttons container */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    padding-top:30px;
+  }
+
+  .hero-buttons .btn + .btn {
+    margin-top: 16px;
+  }
+  .home-page .hero-section {
+    padding-bottom: 54px !important;
+  }
+
+
+}
+/* Prevent line breaks for .no-wrap class */
+.no-wrap {
+  white-space: nowrap;
+}
+/* Margin bottom 100 utility */
+div.margin-bottom-100,
+h3.margin-bottom-100 {
+  margin-bottom: 100px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 50px;
+  }
+}
+
+// Generic .button class for external links and call-to-action buttons
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+// Phase label styling for process section
+.phase-label {
+  font-family: brother-1816, sans-serif !important;
+  font-weight: 600;
+  color: #FF6B5D !important;
+}
+// Also Capable Of section custom subhead and grid layout
+.also-capable-subhead {
+  font-size: 32px;
+  font-weight: 500;
+  color: #0c0c0c;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .also-capable-of-list {
+    grid-template-columns: 1fr;
+  }
+
+  .core-services .also-capable-subhead {
+font-size: 22px;
+}
+}
+// Styles for "Also Capable Of" list in Core Services
+.also-capable-of-list {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 80px; // This gives you ~160px total gutter
+  row-gap: 12px;
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+
+
+.also-capable-of-list li {
+  text-align: center;
+  white-space: normal;
+}
+// Also Capable Of section styles
+.also-capable-of {
+  margin-top: 60px;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  li {
+    font-size: 16px;
+  }
+}
 /* Hide the hamburger aria label visually, but keep for screen readers */
 .hamburger-react-label,
 .hamburger-react__label, /* in case of different lib versions */
@@ -15,7 +140,7 @@
 }
 
 .homepage-cta-buttons {
-  margin-top: 30px;
+  margin-top: 60px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -34,19 +159,48 @@
 .cta-buttons .btn:not(:last-child) {
   margin-right: 20px;
 }
-.btn {
+button {
+  padding-left: 20px;
+  padding-right: 20px;
   font-size: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
+
+  &.full-width,
+  &.footer-btn {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Button colors
+.btn-coral {
+  background-color: #FF6B6B;
+  color: white;
+}
+
+.btn-teal {
+  background-color: #2BC2B7;
+  color: white;
+}
+
+.underline-link {
+  color: white !important;
+  text-decoration: underline;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  font-family: brother-1816, sans-serif !important;
+  display: inline-block;
+}
+
+.underline-link:hover {
+  color: white !important;
   text-decoration: none !important;
 }
-.btn.full-width {
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-}
-.btn:hover, .btn:focus, .btn:active {
-  text-decoration: none !important;
+
+.microcopy {
+  font-size: 14px;
+  color: #999;
+  margin-top: 4px;
 }
 
 /* Fractional CDO Services section */
@@ -60,10 +214,7 @@
   background: linear-gradient(to bottom, #51084f, #031e67);
   color: #fff;
   margin-top: 20px;
-}
-.fractional-cdo-services .row,
-.fractional-cdo-services .row.margin-top-40 {
-  padding: 30px 0;
+  padding: 50px 0;
 }
 .fractional-cdo-services .row + .row {
   margin-top: 40px;
@@ -171,6 +322,7 @@ footer .spaced-out p.about-logan-typography {
 /* CDO table wrapper for inheritance and spacing if needed */
 .cdo-table-wrapper {
   width: 100%;
+  padding: 50px 0;
 }
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
 
@@ -1019,17 +1171,30 @@ header.fixed {
   text-decoration: none;
 }
 
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding-left: 4.75rem;
+  padding-right: 4.75rem;
+  line-height: 52px;
+  vertical-align: middle;
+  text-align: center;
+  font-family: brother-1816, sans-serif;
+}
 .btn.teal-btn {
   background: #00ddc7;
-  color: #0c0c0c !important;
+  color: #0c0c0c;
   font-weight: 700;
   font-size: 20px;
   border-color: #00ddc7;
 
   &:hover {
-    background: darken(#00ddc7, 8%);
-    border-color: darken(#00ddc7, 8%);
-    color: #0c0c0c !important;
+    background: #00c1b1;
+    border-color: #00c1b1;
+    color: #0c0c0c;
   }
 }
 
@@ -1248,6 +1413,10 @@ main .container {
   padding: 50px 0;
 }
 
+main .container.fractional-cdo-services {
+  padding: 170px 0 !important;
+}
+
 main .row {
   margin: 0 auto;
   max-width: 1260px;
@@ -1291,6 +1460,10 @@ main .two-columns .col {
   position: relative;
 }
 
+.home-page .hero-section {
+  padding-bottom: 174px;
+}
+
 .hero-section .content-container {
   max-width: 1310px;
   margin: 0 auto;
@@ -1298,9 +1471,29 @@ main .two-columns .col {
 }
 
 .hero-section .content-container h1 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 60px;
   font-weight: 700;
+}
+.btn.coral-btn {
+  background-color: #ff656c;
+  color: white !important;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.coral-btn:hover {
+  background-color: #e55057;
+  color: white !important;
+  text-decoration: none;
+}
+
+// Prevent anchor tag default underline in footer and elsewhere
+a.btn.coral-btn:hover {
+  text-decoration: none !important;
 }
 
 .hero-section .subtext {
@@ -1454,7 +1647,7 @@ main .max-width-fix {
 }
 /* Increase vertical spacing of table rows in CDO pricing table */
 .cdo-pricing-table tr {
-  height: 68px;
+  // height: 68px;
 }
 
 .margin-top-30 {
@@ -1588,6 +1781,33 @@ div .display-block {
 }
 
 @media only screen and (max-width: 767px) {
+  /* Center-align pricing table rows on mobile */
+  .cdo-pricing-table {
+    width: 100%;
+    display: block;
+  }
+
+  .cdo-pricing-table tbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ This centers the rows */
+    width: 100%;
+  }
+
+  .cdo-pricing-table tbody tr {
+    display: block;
+    width: 100%;
+    max-width: 420px; /* ✅ Keeps it from going full screen */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .cdo-pricing-table tbody tr td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
   main .compressed-content.col,
   main .compressed-text {
     max-width: 100vw;
@@ -2000,12 +2220,15 @@ body .left-0 {
   background: #f0f5ff;
 
   .col.service {
-    max-width: max-content;
+    flex: 1 1 calc(50% - 18.5px);
+    max-width: calc(50% - 18.5px);
   }
 
   .flex-col-mobile {
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 37px;
+    row-gap: 90px;
   }
 
   h5 {
@@ -2240,7 +2463,10 @@ body .left-0 {
     }
   }
 }
-
+.our-process h4 {
+  font-family: brother-1816, sans-serif; 
+  font-weight: 400;
+}
 .our-process {
   background: linear-gradient(
     to bottom,
@@ -2284,7 +2510,7 @@ body .left-0 {
         content: url("../svgs/up-down-arrow.svg");
         position: absolute;
         right: -50px;
-        top: -4px;
+        top: 20px;
         transform: scaleX(-1);
       }
     }
@@ -2293,7 +2519,7 @@ body .left-0 {
         content: url("../svgs/up-down-arrow-flipped.svg");
         position: absolute;
         right: -50px;
-        top: -4px;
+        top: 20px;
         transform: scaleX(-1);
       }
     }
@@ -2647,7 +2873,7 @@ footer {
   .spaced-out {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*  justify-content: space-between; */
 
     p {
       color: white;
@@ -2699,4 +2925,153 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"] {
   font-size: 20px !important;
+}
+
+.portfolio .hero-section .categories button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: Brother-1816, sans-serif;
+  font-size: 33px;
+  font-weight: 500;
+  letter-spacing: -0.99px;
+  line-height: 1.52;
+}
+
+.home-page .hero-section.container {
+  padding-top: 265px;
+}
+
+body .btn {
+  padding-left: 4.75rem;
+  padding-right: 4.75rem;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .cdo-pricing-table tbody tr:last-child td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
+  }
+
+  .cdo-pricing-table tbody tr:last-child td:last-child {
+    border-bottom: 0 !important;
+  }
+  .cdo-pricing-table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cdo-pricing-table thead {
+    display: none;
+  }
+
+  .cdo-pricing-table tbody tr {
+    display: block;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .cdo-pricing-table tbody td {
+  display: block;
+  padding: 10px 0;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  line-height: 1.5;
+  word-break: break-word;
+  }
+
+  .cdo-pricing-table tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  
+  }
+
+  .cdo-pricing-table td:last-child {
+    border-bottom: none;
+  }
+}
+
+.step-one {
+  text-align: left;
+  padding-left: 40px;
+}
+
+.step-one h4,
+.step-one p {
+  text-align: left;
+}
+/* Centered Content Utility: ensures max width and centering inside flex/row containers */
+.centered-content {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  flex: 0 0 100%;
+}
+
+/* If a parent .row uses flex and causes alignment issues, override for centered text rows */
+.row.center-text,
+.row.centered-text {
+  flex-direction: column;
+  align-items: center;
+}
+// Prevent line break in hero headline
+.no-wrap {
+  white-space: nowrap;
+}
+
+.no-wrap-text {
+  white-space: nowrap;
+  display: inline-block;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 767px) {
+  .no-wrap-text {
+    white-space: normal;
+  }
+    .no-wrap {
+    white-space: normal;
+  }
+}
+
+
+/* Pricing buttons centering for CDO services section */
+.pricing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+/* --- Supporting Expertise Responsive Styles --- */
+@media (max-width: 768px) {
+  .also-capable-of-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0rem !important;
+    grid-template-columns: none !important;
+    align-items: stretch !important;
+  }
+  .also-capable-of-list li {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .supporting-expertise h3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
 }

@@ -18,7 +18,7 @@ const Footer = () => {
 <div className="cta-buttons margin-bottom-50">
   <a
     href="https://calendly.com/YOUR-CALENDLY-LINK"
-    className="btn teal-btn margin-right-15"
+    className="btn coral-btn homepage-cta-btn margin-right-15"
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -26,6 +26,7 @@ const Footer = () => {
   </a>
 </div>
           <div className="emails">
+            {/* 
             <p className="hide-on-mobile">
               Strategy & Branding
               <a
@@ -56,8 +57,9 @@ const Footer = () => {
                 content@synthdigital.com
               </a>
             </p>
+            */}
             <p className="hide-on-mobile">
-              Founder & Design Lead
+              Email Me
               <a
                 href="mailto:logan@synthdigital.com"
                 target="_blank"
@@ -66,6 +68,7 @@ const Footer = () => {
                 logan@synthdigital.com
               </a>
             </p>
+            <small>Strategy, branding, or development inquiries welcome</small>
           </div>
         </Col>
         <Col>
@@ -157,15 +160,15 @@ const Footer = () => {
                     />
                   </label>
                 </div>
-                <div className="How can we help you?">
+                <div className="Tell me about your project.">
                   <label htmlFor="msg">
-                    How can we help you?
+                    Tell me a bit about your project
                     <textarea
                       type="text"
                       name="msg"
                       id="msg"
                       className="send-value"
-                      placeholder="Tell us about your business and scope of the project!"
+                      placeholder="Tell me a bit about your business and scope of project"
                       required
                     />
                   </label>
@@ -178,7 +181,7 @@ const Footer = () => {
                   </p>
                   <button
                     type="submit"
-                    className="btn teal-btn margin-top-30"
+                    className="btn teal-btn full-width"
                     id="sbmt-form-btn"
                   >
                     Send
@@ -225,7 +228,7 @@ const Footer = () => {
                 </a>
               </p>
               <p className="hide-on-mobile">
-                Founder & Design Lead
+                Email Logan
                 <a
                   href="mailto:logan@synthdigital.com"
                   target="_blank"

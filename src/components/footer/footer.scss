@@ -44,12 +44,12 @@ footer ::placeholder {
   transition: all 0.3s ease;
   font-family: "Poppins";
   padding: 0 10px;
-  line-height: 58px !important;
+  line-height: 58px;
 }
 
 footer textarea::placeholder {
-  line-height: 30px !important;
-  padding-top: 0px !important;
+  line-height: 30px;
+  padding-top: 0px;
 }
 
 footer input {
