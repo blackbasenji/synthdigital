@@ -17,7 +17,7 @@ const Footer = () => {
 </p>
 <div className="cta-buttons margin-bottom-50">
   <a
-    href="https://calendly.com/YOUR-CALENDLY-LINK"
+    href="https://calendly.com/loganmccoy/new-meeting-1"
     className="btn coral-btn homepage-cta-btn margin-right-15"
     target="_blank"
     rel="noopener noreferrer"
