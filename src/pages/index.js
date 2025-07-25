@@ -145,8 +145,7 @@ const IndexPage = () => {
   For over a decade, I’ve worked closely with startups and founders — helping turn scrappy ideas into scalable, user-loved products.
 </p>
       <p>
-        Through a blend of product strategy, UX leadership, and creative synthesis, I help teams move quickly without losing clarity.<br />
-        <span className="no-wrap">A fast, cohesive product experience...</span>
+        Through a blend of product strategy, UX leadership, and creative synthesis, I help teams move quickly without losing clarity.
       </p>
       <p>
         I’ve led design systems, user flows, and full product builds across AI, healthcare, fintech, and consumer tech — from 0 to 7,000+ users and beyond.
@@ -341,7 +340,7 @@ const IndexPage = () => {
           <div className="row margin-top-60 margin-bottom-100 center-text">
             <p>
               <span className="no-wrap-text">Want to dive deeper into the UX and product design behind my work?</span><br />
-              I keep an current and curated case study archive at <a href="https://loganmccoy.design" target="_blank">loganmccoy.design</a>.
+              I keep a current and curated case study archive at <a href="https://loganmccoy.design" target="_blank">loganmccoy.design</a>.
             </p>
             <a href="https://loganmccoy.design" className="btn coral-btn">See My Case Studies →</a>
           </div>
